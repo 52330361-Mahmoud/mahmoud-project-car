@@ -21,7 +21,7 @@ function BMW() {
         {cars.map((car) => (
           <div className="card-box" key={car.id}>
             <Cards src={car.src} title={car.title} Price={car.price} />
-            
+            <button className="buy-btn">View Details</button>
            
           </div>
         ))}
