@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap");
+
+/* ===== Audi: بياض نظيف + دقة هندسية + خط أحمر صغير ===== */
+
+.Audi-page {
+  min-height: 100vh;
+  padding: 72px 6vw 96px;
+  background: #f1f2f4;
+  color: #15171a;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.Audi-page .page-title {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #15171a;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.Audi-page .page-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 96px;
+  height: 5px;
+  background: #bb0a30;
+}
+
+.Audi-page .Audi {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* البطاقة */
+.Audi-page .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dfe1e5;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.Audi-page .card br {
+  display: none;
+}
+
+.Audi-page .card > div:first-child {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #dcdfe3;
+}
+
+.Audi-page .card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.Audi-page .card:hover img {
+  transform: scale(1.05);
+}
+
+.Audi-page .card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px 24px 28px;
+}
+
+.Audi-page .card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.Audi-page .card p {
+  margin: 0;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.Audi-page .buy-btn {
+  padding: 8px 14px;
+  color: #fff;
+  background: #bb0a30;
+  border: 1px solid #bb0a30;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Audi-page .buy-btn:hover {
+  background: #940825;
+  border-color: #940825;
+}
+
+/* خط أحمر يمتد تحت البطاقة عند المرور */
+.Audi-page .card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #bb0a30;
+  transition: width 0.45s ease;
+}
+
+.Audi-page .card:hover::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Audi-page .card img,
+  .Audi-page .card::after {
+    transition: none;
+  }
+}

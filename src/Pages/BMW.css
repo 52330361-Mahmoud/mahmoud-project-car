@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap");
+
+/* ===== BMW: أزرق ليلي + شريط M الثلاثي ===== */
+
+.BMW-page {
+  min-height: 100vh;
+  padding: 72px 6vw 96px;
+  background: radial-gradient(
+    ellipse 80% 50% at 15% 0%,
+    #16365a 0%,
+    #0a1520 60%,
+    #070f17 100%
+  );
+  color: #fff;
+  font-family: "Archivo", "Segoe UI", sans-serif;
+}
+
+.BMW-page .page-title {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* شريط M: أزرق فاتح / أزرق غامق / أحمر */
+.BMW-page .page-title::before {
+  content: "";
+  flex: none;
+  width: 72px;
+  height: 26px;
+  transform: skewX(-22deg);
+  background: linear-gradient(
+    90deg,
+    #81c4ff 0 33.33%,
+    #0653b6 33.33% 66.66%,
+    #e22718 66.66% 100%
+  );
+}
+
+.BMW-page .cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px;
+}
+
+.BMW-page .card-box {
+  position: relative;
+  display: flex;
+}
+
+/* البطاقة */
+.BMW-page .card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #0f2132;
+  border: 1px solid rgba(129, 196, 255, 0.14);
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.BMW-page .card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(129, 196, 255, 0.5);
+}
+
+.BMW-page .card::before {
+  content: "";
+  flex: none;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    #81c4ff 0 33.33%,
+    #0653b6 33.33% 66.66%,
+    #e22718 66.66% 100%
+  );
+}
+
+.BMW-page .card br {
+  display: none;
+}
+
+.BMW-page .card > div:first-child {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.BMW-page .card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.BMW-page .card:hover img {
+  transform: scale(1.04);
+}
+
+.BMW-page .card > div:last-child {
+  padding: 22px 24px 72px;
+}
+
+.BMW-page .card-title {
+  margin: 0 0 6px;
+  color: #81c4ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.BMW-page .card p {
+  margin: 0;
+  color: #81c4ff;
+  font-weight: 500;
+}
+
+.BMW-page .buy-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  color: #fff;
+  background: #bb0a30;
+  border: 1px solid #bb0a30;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.BMW-page .buy-btn:hover {
+  background: #940825;
+  border-color: #940825;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .BMW-page .card,
+  .BMW-page .buy-btn,
+  .BMW-page .card img {
+    transition: none;
+  }
+}

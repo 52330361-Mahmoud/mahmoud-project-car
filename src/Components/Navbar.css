@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+
+/* الشريط: أسود فحمي، بيضل فوق وانت بتنزل */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  background: rgba(14, 15, 17, 0.94) !important;
+  backdrop-filter: blur(10px);
+  font-family: "Jost", "Segoe UI", sans-serif;
+}
+
+/* خط سفلي بألوان الشركات: BMW / Mercedes / Audi / Ferrari */
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #0653b6 0 25%,
+    #00a19b 25% 50%,
+    #bb0a30 50% 75%,
+    #ffd200 75% 100%
+  );
+}
+
+.navbar > .container {
+  padding-top: 18px;
+  padding-bottom: 21px;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+
+/* الاسم */
+.navbar .navbar-brand {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}
+
+/* الروابط */
+.navbar .navbar-nav {
+  flex-wrap: wrap;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link {
+  position: relative;
+  padding: 8px 6px;
+  color: #aeb3ba;
+  font-size: 1.05rem !important;
+  transition: color 0.25s ease;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+/* خط يطلع تحت الرابط بلون الشركة */
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 0;
+  height: 2px;
+  background: var(--c, #fff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .nav-link:nth-child(1) { --c: #ffffff; }
+.navbar .nav-link:nth-child(2) { --c: #4da3ff; }
+.navbar .nav-link:nth-child(3) { --c: #00a19b; }
+.navbar .nav-link:nth-child(4) { --c: #e0123b; }
+.navbar .nav-link:nth-child(5) { --c: #ffd200; }
+
+/* موبايل */
+@media (max-width: 576px) {
+  .navbar > .container {
+    justify-content: center;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar .navbar-nav {
+    justify-content: center;
+  }
+}

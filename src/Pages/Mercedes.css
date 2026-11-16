@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400&display=swap");
+
+/* ===== Mercedes: صالة عرض فضية، السيارة تطفو بدون إطار ===== */
+
+.Mercedes-page {
+  min-height: 100vh;
+  padding: 80px 6vw 110px;
+  background: radial-gradient(
+    ellipse 70% 40% at 50% 0%,
+    #3a3e44 0%,
+    #16181b 60%,
+    #0d0e10 100%
+  );
+  color: #e9ebee;
+  font-family: "Jost", "Segoe UI", sans-serif;
+}
+
+.Mercedes-page .page-title {
+  margin: 0 auto 72px;
+  text-align: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  background: linear-gradient(180deg, #ffffff 0%, #a9afb7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.Mercedes-page .page-title::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 1px;
+  margin: 24px auto 0;
+  background: #00a19b;
+}
+
+.Mercedes-page .Mercedes {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 64px 40px;
+}
+
+/* بدون صندوق: السيارة على أرضية مضيئة */
+.Mercedes-page .card {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.Mercedes-page .card br {
+  display: none;
+}
+
+.Mercedes-page .card > div:first-child {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ضوء الأرضية تحت السيارة */
+.Mercedes-page .card > div:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 6%;
+  width: 75%;
+  height: 16%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+}
+
+.Mercedes-page .card img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.55));
+  transition: transform 0.6s ease;
+}
+
+.Mercedes-page .card:hover img {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.Mercedes-page .card > div:last-child {
+  padding-top: 18px;
+}
+
+.Mercedes-page .card-title {
+  margin: 0 0 6px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.Mercedes-page .card p {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: #aeb4bb;
+}
+
+.Mercedes-page .buy-btn {
+  padding: 8px 14px;
+  color: #fff;
+  background: #bb0a30;
+  border: 1px solid #bb0a30;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Mercedes-page .buy-btn:hover {
+  background: #940825;
+  border-color: #940825;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Mercedes-page .card img {
+    transition: none;
+  }
+}

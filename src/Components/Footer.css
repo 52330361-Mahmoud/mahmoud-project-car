@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap");
+
+/* الفوتر: نفس هوية الـ Navbar */
+footer {
+  position: relative;
+  background: #0e0f11;
+  color: #aeb3ba;
+  font-family: "Jost", "Segoe UI", sans-serif;
+}
+
+/* خط علوي بألوان الشركات الأربعة */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #0653b6 0 25%,
+    #00a19b 25% 50%,
+    #bb0a30 50% 75%,
+    #ffd200 75% 100%
+  );
+}
+
+/* سطر الحقوق بدون ما نغيّر الـ JSX */
+footer::after {
+  content: "© 2026 Luxury Cars. All rights reserved.";
+  display: block;
+  padding: 18px 6vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7d838b;
+}
+
+/* الصف الرئيسي: الإيميل يسار، الأيقونات يمين */
+.footer {
+  width: min(1200px, calc(100% - 12vw));
+  margin: 0 auto;
+  padding: 40px 0 32px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer > div:nth-child(1) p {
+  margin: 0;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+/* أول أيقونة سوشيال بتدفع الباقي لليمين */
+.footer > div:nth-child(2) {
+  margin-left: auto;
+}
+
+/* كل الأيقونات بدوائر فاتحة عشان تبين دايماً */
+.footer img {
+  display: block;
+  box-sizing: content-box;
+  width: 20px;
+  height: 20px;
+  padding: 9px;
+  object-fit: contain;
+  background: #f1f2f4;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.footer > div:nth-child(n + 2) img {
+  cursor: pointer;
+}
+
+.footer > div:nth-child(n + 2) img:hover {
+  transform: translateY(-3px);
+}
+
+/* موبايل: كل شي بالنص */
+@media (max-width: 576px) {
+  .footer {
+    justify-content: center;
+  }
+
+  .footer > div:nth-child(1) {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .footer > div:nth-child(2) {
+    margin-left: 0;
+  }
+}

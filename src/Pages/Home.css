@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,800&display=swap");
+
+.home {
+  background: #0a0a0b;
+  color: #fff;
+  font-family: "Barlow Condensed", "Segoe UI", sans-serif;
+}
+
+/* ===== الشريط العلوي: نار متحركة ===== */
+.home .top-bar {
+  margin: 0;
+  padding: 10px 6vw;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff2d00, #ff8a00, #ff2d00);
+  background-size: 200% 100%;
+  animation: fire-slide 4s linear infinite;
+}
+
+@keyframes fire-slide {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== الواجهة ===== */
+.home .hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  height: min(88vh, 720px);
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.home .hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* توهج ناري ينبض من تحت اليسار */
+.home .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    circle at 15% 90%,
+    rgba(255, 70, 0, 0.6),
+    transparent 55%
+  );
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* تغميق الصورة عشان النص يبين */
+.home .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 8, 9, 0.92) 0%,
+    rgba(8, 8, 9, 0.55) 55%,
+    rgba(8, 8, 9, 0.15) 100%
+  );
+}
+
+.home .hero-text {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 12vw));
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.home .hero-text h1 {
+  margin: 0 0 14px;
+  max-width: 800px;
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 0.95;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+.home .hero-text h1 span {
+  background: linear-gradient(90deg, #ff2d00, #ff8a00, #ffd000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(255, 100, 0, 0.55));
+}
+
+.home .hero-text p {
+  margin: 0 0 32px;
+  font-size: 1.4rem;
+  color: #dfe2e6;
+}
+
+/* الزر: نار + لمعة تمر عليه */
+.home .hero-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 42px;
+  overflow: hidden;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(90deg, #ff2d00, #ff8a00);
+  box-shadow: 0 10px 34px rgba(255, 80, 0, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home .hero-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+}
+
+.home .hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 46px rgba(255, 80, 0, 0.7);
+}
+
+.home .hero-btn:hover::after {
+  left: 130%;
+}
+
+/* ===== قسم الماركات ===== */
+.home .brands {
+  padding: 50px 6vw 110px;
+  background: radial-gradient(
+    ellipse 60% 30% at 50% 0%,
+    rgba(255, 80, 0, 0.14),
+    transparent
+  );
+}
+
+.home .brands-title {
+  margin: 0 0 56px;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.home .brands-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 5px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #ff2d00, #ffd000);
+}
+
+.home .brand-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+/* ===== بطاقة الماركة ===== */
+.home .brand-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  text-decoration: none;
+  background: radial-gradient(circle at 50% 40%, #2a2a2e, #0f0f11);
+  border-bottom: 5px solid var(--c);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home .brand-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.home .brand-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.home .brand-tile span {
+  position: absolute;
+  left: 26px;
+  bottom: 22px;
+  z-index: 1;
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 800;
+  color: #fff;
+}
+
+.home .brand-tile span::after {
+  content: " →";
+  display: inline-block;
+  color: var(--c);
+  transition: transform 0.3s ease;
+}
+
+.home .brand-tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 0 1px var(--c), 0 26px 60px rgba(0, 0, 0, 0.7);
+}
+
+.home .brand-tile:hover img {
+  transform: scale(1.08);
+}
+
+.home .brand-tile:hover span::after {
+  transform: translateX(10px);
+}
+
+/* لون كل شركة */
+.home .bmw { --c: #4da3ff; }
+.home .mercedes { --c: #00a19b; }
+.home .audi { --c: #e0123b; }
+.home .ferrari { --c: #ffd200; }
+
+/* ===== موبايل ===== */
+@media (max-width: 600px) {
+  .home .hero {
+    min-height: 460px;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+
+  .home .hero::after {
+    background: rgba(8, 8, 9, 0.6);
+  }
+
+  .home .brand-tile span {
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .top-bar,
+  .home .hero::before {
+    animation: none;
+  }
+}
