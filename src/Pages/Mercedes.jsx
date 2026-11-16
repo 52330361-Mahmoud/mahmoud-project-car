@@ -24,7 +24,7 @@ function Mercedes() {
             src={car.src}
             title={car.title}
             Price={car.price}
-            button={<button className="buy-btn">View Details</button>}
+          
           />
         ))}
       </div>
