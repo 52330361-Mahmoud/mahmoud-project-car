@@ -9,7 +9,7 @@ const cars = [
   { id: 1, src: Audi2, title: "Audi A4 sedan", price: "87,000" },
   { id: 2, src: Audi2, title: "Audi A6 Executive", price: "72,000" },
   { id: 3, src: Audi2, title: "Audi Q7 Family SUV", price: "93,000" },
-  { id: 4, src: Audi2, title: "Audi R8 SuperCar", price: "60,000" },
+  { id: 4, src: Audi2, title: "Audi R8 SuperCar", price: "70,000" },
 ];
 
 function Audi() {
