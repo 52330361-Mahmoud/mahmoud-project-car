@@ -128,6 +128,24 @@
   font-weight: 500;
 }
 
+.BMW-page .car-description {
+  margin-top: 8px;
+}
+
+.BMW-page .car-description h3 {
+  margin: 0 0 4px;
+  color: #81c4ff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.BMW-page .car-description p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
 .BMW-page .buy-btn {
   position: absolute;
   left: 50%;
